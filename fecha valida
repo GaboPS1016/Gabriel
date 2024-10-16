@@ -1,0 +1,51 @@
+using System;
+public class Program 
+{
+    public static void Main ()
+    {
+        Console.Write("day: ");
+        int day = int.Parse(Console.ReadLine()!);
+        Console.Write("month: ");
+        int month = int.Parse(Console.ReadLine()!);
+        Console.Write("year: ");
+        int year = int.Parse(Console.ReadLine()!);
+
+        if (year>=0 && month>0 && month<=12 && day>0 && day<=31) 
+        {
+            if (year%4==0)                              //biciesto
+            {
+                if(month==2)
+                {
+                    if(day<=29)                                                     //febrero biciesto
+                    {
+                        Console.WriteLine($"{day}/{month}/{year}");
+                        return;
+                    }
+                    
+                }
+            }
+            if(month==4 || month==6 || month==9|| month==11)           //meses de 30 dias
+            {
+                if(day!=31)
+                {
+                    Console.WriteLine($"{day}/{month}/{year}");
+                    return;
+                }
+            }
+            else 
+            {
+                Console.WriteLine($"{day}/{month}/{year}"); 
+                return; 
+            }
+            if(month==2)                                                //febrero
+            {
+                if(day<=28)
+                {
+                    Console.WriteLine($"{day}/{month}/{year}");
+                    return;
+                }
+            }
+            Console.WriteLine("error");
+        }
+    }
+}
